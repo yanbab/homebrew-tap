@@ -10,9 +10,9 @@ cask "appfinder" do
   desc "Software library for macOS"
   homepage "https://github.com/yanbab/appfinder"
 
-  auto_updates true
-  depends_on macos: ">= :ventura"
-
+  auto_updates false
+  depends_on macos: :ventura
+  
   app "AppFinder.app"
 
   zap trash: [
