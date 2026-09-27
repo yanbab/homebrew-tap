@@ -1,18 +1,18 @@
 cask "appfinder" do
   arch arm: "arm64", intel: ""
 
-  version "0.9.1"
-  sha256 arm:   "5af5030b0e2c8cdd3e57e0e0a81c083fe91ac7814893de8799b82f32e4e4929e",
-         intel: "a7885246c14d26b6584e7bbd69894555650cb1cdbec00595c957cd074da9b353"
+  version "0.9.3"
+  sha256 arm:   "32426ce9f94db52c1ac2d6f0af231407e5c8e88f9d2f6b46817c06168a49a467",
+         intel: "76210c968d6136e07b145b83caf1c0b669be842e4faf6310c10724f527b8ace6"
 
   url "https://github.com/yanbab/appfinder/releases/download/v#{version}/AppFinder-#{version}#{arch.empty? ? "" : "-#{arch}"}.dmg"
   name "AppFinder"
-  desc "Software library for macOS"
+  desc "App store for the Homebrew package manager"
   homepage "https://github.com/yanbab/appfinder"
 
-  auto_updates false
-  depends_on macos: :ventura
-  
+  auto_updates true
+  depends_on macos: ">= :ventura"
+
   app "AppFinder.app"
 
   zap trash: [
