@@ -1,9 +1,9 @@
 cask "appfinder" do
   arch arm: "arm64", intel: ""
 
-  version "0.9.6"
-  sha256 arm:   "",
-         intel: ""
+  version "0.9.7"
+  sha256 arm:   "443d462d3225ec7af6d631a385c623935fdf48eda9d3fd652974bd5da7773ea5",
+         intel: "31cd1aa701dbb055cacf5f38bc414202dc1585a3c740c4183ebcb6ba1fb60ea0"
 
   url "https://github.com/yanbab/appfinder/releases/download/v#{version}/AppFinder-#{version}#{arch.empty? ? "" : "-#{arch}"}.dmg"
   name "AppFinder"
@@ -11,7 +11,7 @@ cask "appfinder" do
   homepage "https://github.com/yanbab/appfinder"
 
   auto_updates true
-  depends_on macos: :ventura
+  depends_on macos: ">= :ventura"
 
   app "AppFinder.app"
 
