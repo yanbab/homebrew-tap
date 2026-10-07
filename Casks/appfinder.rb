@@ -1,9 +1,9 @@
 cask "appfinder" do
   arch arm: "arm64", intel: ""
 
-  version "0.9.7"
-  sha256 arm:   "443d462d3225ec7af6d631a385c623935fdf48eda9d3fd652974bd5da7773ea5",
-         intel: "31cd1aa701dbb055cacf5f38bc414202dc1585a3c740c4183ebcb6ba1fb60ea0"
+  version "0.9.9"
+  sha256 arm:   "b540de8120c24b10f100fb38041d21be8e860688f0dcb23463509490f5c800c1",
+         intel: "321a55e6d789d00e7bc7c2bf2c1f8f2a3c48844bf29198adb99bd0d7af8194fe"
 
   url "https://github.com/yanbab/appfinder/releases/download/v#{version}/AppFinder-#{version}#{arch.empty? ? "" : "-#{arch}"}.dmg"
   name "AppFinder"
