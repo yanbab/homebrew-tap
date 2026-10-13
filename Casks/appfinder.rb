@@ -1,9 +1,9 @@
 cask "appfinder" do
   arch arm: "arm64", intel: ""
 
-  version "0.9.11"
-  sha256 arm:   "112741969de10e34da73c429ba64bcb3d67468162cf356a02bd3b5b2c2173d33",
-         intel: "4d91de2432f8f1f1693e6d80f67e855f2ef44c3aaca1e3a607a53089e9536d48"
+  version "0.9.12"
+  sha256 arm:   "72b07784906885df9ec2646e4edd4ccbf6ab7201665c7924c7c27089569d9657",
+         intel: "119c4d06ec402dcec31e21f152aaa2cb2584c7aacc4c86834b628579beb4de0a"
 
   url "https://github.com/yanbab/appfinder/releases/download/v#{version}/AppFinder-#{version}#{arch.empty? ? "" : "-#{arch}"}.dmg"
   name "AppFinder"
@@ -11,11 +11,11 @@ cask "appfinder" do
   homepage "https://github.com/yanbab/appfinder"
 
   auto_updates true
-  depends_on macos: ">= :ventura"
+  depends_on macos: :ventura
 
   app "AppFinder.app"
 
-  postflight do
+  postflight_steps do
     system_command "xattr",
                    args: ["-cr", "#{appdir}/AppFinder.app"]
   end
